@@ -1,0 +1,5 @@
+package apllication.dto.service;
+
+public class LocalizaçãoServiceImpl {
+
+}

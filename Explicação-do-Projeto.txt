@@ -1,0 +1,51 @@
+
+ Estrutura do Projeto: PetAPI - Arquitetura Hexagonal
+
+Este projeto segue a arquitetura hexagonal (Ports and Adapters), com separação clara entre domínio, aplicação e infraestrutura.
+
+---
+
+ Pacotes e seus Propósitos
+
+ com.apipet.domain
+Contém o núcleo do domínio:
+- `model`: Entidades como `LocalizacaoPet`, `Endereco`.
+- `port`: Interfaces que representam as portas da aplicação.
+  - `in`: Casos de uso (ex: LocalizacaoUseCase).
+  - `out`: Regras para persistência e chamadas externas.
+
+com.apipet.application
+Contém os serviços de aplicação que implementam os casos de uso:
+- `service`: Implementa a lógica dos casos de uso definidos no `port.in`.
+
+ com.apipet.infrastructure
+Implementações técnicas da aplicação:
+- `adapter.in.controller`: Controladores REST que expõem a API.
+- `adapter.out.persistence`: Implementações da porta de persistência.
+- `client`: Comunicação externa (ex: com a API PositionStack).
+
+
+---
+
+ Interligação de Classes
+
+- `LocalizacaoController` chama `LocalizacaoUseCase` (interface).
+- `LocalizacaoService` implementa `LocalizacaoUseCase`, usando as portas de saída:
+  - `LocalizacaoPersistencePort` (salvar/buscar no banco).
+  - `PositionStackClientPort` (consultar endereço por latitude/longitude).
+- Adapters implementam essas interfaces e realizam a lógica real:
+  - `LocalizacaoPersistenceAdapter` implementa persistência com JPA.
+  - `PositionStackClientImpl` realiza chamadas HTTP à PositionStack.
+
+---
+
+ Benefícios da Arquitetura
+
+- Separação clara de responsabilidades.
+- Fácil substituição de implementações (ex: mudar de JPA para MongoDB).
+- Alta testabilidade (mocks de interfaces).
+- Independência de frameworks na lógica de negócio.
+
+---
+
+
