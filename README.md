@@ -57,6 +57,7 @@ Essa abordagem promove **baixo acoplamento**, **alta coesão**, **facilidade de 
 
 - Java 17
 - Maven
+- IDE (STS)
 
 # Passos
 
