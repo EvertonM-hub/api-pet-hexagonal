@@ -81,7 +81,17 @@ A aplicação estará disponível em: `http://localhost:8080/api/localizacao`
 | POST   -->  /api/localizacao         -->     Registra nova localização         
 | GET    -->  /api/localizacao         -->     Lista todas as localizações        
 | GET    -->  /api/localizacao/{id}    -->     Busca uma localização por ID       
-| DELETE -->  /api/localizacao/{id}    -->     Remove uma localização por ID      
+| DELETE -->  /api/localizacao/{id}    -->     Remove uma localização por ID     
+
+LocalizacaoDTO
+
+A classe `LocalizacaoDTO` é um **Data Transfer Object (DTO)** utilizado para transportar as informações de **localização de um pet** entre as camadas da aplicação e também nas chamadas de API.
+
+Campo	         Tipo	            Descrição	                                                          Exemplo
+sensorId ----	 String ----------	Identificador único do sensor ou dispositivo de rastreamento ---	"sensor-abc-123"
+latitude ----	 double ----------	Coordenada geográfica de latitude ------------------------------	-23.55052
+longitude ---  double ----------	Coordenada geográfica de longitude -----------------------------  -46.633308
+dataHora	---  LocalDateTime ---	Data e hora em que a localização foi capturada -----------------  "2025-09-30T16:00:00"
 
 ---
 
@@ -112,7 +122,7 @@ Senha: *(em branco)*
 - **PositionStack API** foi usada para resolver o problema de geolocalização reversa de forma simples e gratuita.
 - **H2 in-memory** foi utilizada para facilitar testes e execução local.
 - **DTOs** foram usados para transportar os dados da camada de entrada para o domínio.
-- **Logs, métricas e testes** foram priorizados conforme exigido.
+
 
 ---
 
