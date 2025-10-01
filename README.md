@@ -75,9 +75,7 @@ A aplicação estará disponível em: `http://localhost:8080/api/localizacao`
 ---
 
 # Endpoints
-
-| Método            Rota                        Descrição                          
-
+                    
 ## | POST   -->  /api/localizacao         -->     Registra nova localização  
 
 ### Request
@@ -100,7 +98,7 @@ Na requisição POST utilizamos os paremetros por meio do body, passando um obje
 |longitude |  double         |	Coordenada geográfica de longitude                           |       -22.971964     |
 |dataHora	 |  LocalDateTime  |	Data e hora em que a localização foi capturada               | "2025-07-21T11:30:00"|
 
-# Response 
+### Response 
 
 O response devolve o objeto cadastrado.
 
@@ -119,9 +117,9 @@ O response devolve o objeto cadastrado.
     }
 ```
 
-| GET    -->  /api/localizacao         -->     Lista todas as localizações 
+## | GET    -->  /api/localizacao         -->     Lista todas as localizações 
 
-# Request
+### Request
 
 Na requisição GET utilizamos os paremetros por meio do body, passando um objeto json,  conforme o exemplo abaixo:
 
@@ -141,7 +139,7 @@ Na requisição GET utilizamos os paremetros por meio do body, passando um objet
 |longitude |  double         |	Coordenada geográfica de longitude                           |       -22.971964     |
 |dataHora	 |  LocalDateTime  |	Data e hora em que a localização foi capturada               | "2025-07-21T11:30:00"|
 
-# Response 
+### Response 
 
 O response devolve uma lista com os objetos cadastrados no endpoint de POST
 
@@ -186,14 +184,14 @@ O response devolve uma lista com os objetos cadastrados no endpoint de POST
 ]
 ```
 
-| GET    -->  /api/localizacao/{id}    -->     Busca uma localização por ID
+## | GET    -->  /api/localizacao/{id}    -->     Busca uma localização por ID
 
-# Request
+### Request
 
 Na requisição GET por ID, é passado o valor de ID diretamente na URL, conforme o exemplo abaixo:
 {{baseURL}}/api/localizacao/1
 
-# Response 
+### Response 
 
 O response devolve um Objeto com a requisição do Id que foi passado.
 
@@ -212,20 +210,20 @@ O response devolve um Objeto com a requisição do Id que foi passado.
     }
 ```
 
-| DELETE -->  /api/localizacao/{id}    -->     Remove uma localização por ID     
+## | DELETE -->  /api/localizacao/{id}    -->     Remove uma localização por ID     
 
-# Request
+### Request
 
 Na requisição DELETE por ID, é passado o valor de ID diretamente na URL, conforme o exemplo abaixo:
 {{baseURL}}/api/localizacao/1
 
-# Response 
+### Response 
 
 O response devolve o Status code 204 e retorna 1 indicando sucesso da deleção.
                                                                                      
 ---
 
-# Testes
+## Testes
 
 Foram implementados testes de unidade e integração usando JUnit e Mockito.
 
