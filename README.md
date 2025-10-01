@@ -190,8 +190,8 @@ Senha: *(em branco)*
 
 # Coleção Postman
 
-Uma coleção de testes para facilitar o uso da API está incluída no repositório:  
-[PetAPI-PostmanCollection.json](PetAPI-PostmanCollection.json)
+Uma collection de testes para facilitar o uso da API está incluída no repositório:  
+PetAPI-PostmanCollection.json
 
 ---
 
