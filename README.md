@@ -78,15 +78,11 @@ A aplicação estará disponível em: `http://localhost:8080/api/localizacao`
 
 | Método            Rota                        Descrição                          
 
-| POST   -->  /api/localizacao         -->     Registra nova localização         
-| GET    -->  /api/localizacao         -->     Lista todas as localizações        
-| GET    -->  /api/localizacao/{id}    -->     Busca uma localização por ID       
-| DELETE -->  /api/localizacao/{id}    -->     Remove uma localização por ID     
-
+| POST   -->  /api/localizacao         -->     Registra nova localização  
 
 # Request
 
-Nesta requisição utilizamos os paremetros por meio do body, passando um objeto json, conforme o exemplo abaixo:
+Na requisição POST utilizamos os paremetros por meio do body, passando um objeto json,  conforme o exemplo abaixo:
 
 ```json
 {
@@ -105,6 +101,49 @@ Nesta requisição utilizamos os paremetros por meio do body, passando um objeto
 |dataHora	 |  LocalDateTime  |	Data e hora em que a localização foi capturada               | "2025-07-21T11:30:00"|
 
 # Response 
+
+O response devolve uma lista com os objetos cadastrados no endpoint de POST
+
+```json
+    {
+        "id": 1,
+        "sensorId": "PET-003",
+        "latitude": -30.034647,
+        "longitude": -51.217658,
+        "dataHora": "2025-07-21T13:45:00",
+        "pais": "Brazil",
+        "estado": "Rio Grande Do Sul",
+        "cidade": "Porto Alegre",
+        "bairro": "Farroupilha",
+        "endereco": "Largo Professor Francisco de Paula Brochado Rocha, Porto Alegre, RS, Brazil"
+    }
+```
+
+| GET    -->  /api/localizacao         -->     Lista todas as localizações 
+
+# Request
+
+Na requisição GET utilizamos os paremetros por meio do body, passando um objeto json,  conforme o exemplo abaixo:
+
+```json
+{
+  "sensorId": "PET-002",
+  "latitude": -22.971964,
+  "longitude": -22.971964,,
+  "dataHora": "2025-07-21T11:30:00"
+}
+```
+
+|Campo	   |     Tipo	       |          Descrição	                                           |          Exemplo     |
+|----------|-----------------|---------------------------------------------------------------|-----------------     |
+|sensorId  |	 String        |	Identificador único do sensor ou dispositivo de rastreamento | "sensor-abc-123"     |
+|latitude  | double          |	Coordenada geográfica de latitude                            |       -22.971964     |
+|longitude |  double         |	Coordenada geográfica de longitude                           |       -22.971964     |
+|dataHora	 |  LocalDateTime  |	Data e hora em que a localização foi capturada               | "2025-07-21T11:30:00"|
+
+# Response 
+
+O response devolve uma lista com os objetos cadastrados no endpoint de POST
 
 ```json
 [
@@ -147,7 +186,43 @@ Nesta requisição utilizamos os paremetros por meio do body, passando um objeto
 ]
 ```
 
+| GET    -->  /api/localizacao/{id}    -->     Busca uma localização por ID
 
+# Request
+
+Na requisição GET por ID, é passado o valor de ID diretamente na URL, conforme o exemplo abaixo:
+{{baseURL}}/api/localizacao/1
+
+# Response 
+
+O response devolve um Objeto com a requisição do Id que foi passado.
+
+```json
+    {
+        "id": 1,
+        "sensorId": "PET-003",
+        "latitude": -30.034647,
+        "longitude": -51.217658,
+        "dataHora": "2025-07-21T13:45:00",
+        "pais": "Brazil",
+        "estado": "Rio Grande Do Sul",
+        "cidade": "Porto Alegre",
+        "bairro": "Farroupilha",
+        "endereco": "Largo Professor Francisco de Paula Brochado Rocha, Porto Alegre, RS, Brazil"
+    }
+```
+
+| DELETE -->  /api/localizacao/{id}    -->     Remove uma localização por ID     
+
+# Request
+
+Na requisição DELETE por ID, é passado o valor de ID diretamente na URL, conforme o exemplo abaixo:
+{{baseURL}}/api/localizacao/1
+
+# Response 
+
+O response devolve o Status code 204 e retorna 1 indicando sucesso da deleção.
+                                                                                     
 ---
 
 # Testes
