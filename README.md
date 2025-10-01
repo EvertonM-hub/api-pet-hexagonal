@@ -83,15 +83,65 @@ A aplicação estará disponível em: `http://localhost:8080/api/localizacao`
 | GET    -->  /api/localizacao/{id}    -->     Busca uma localização por ID       
 | DELETE -->  /api/localizacao/{id}    -->     Remove uma localização por ID     
 
-LocalizacaoDTO
 
-A classe `LocalizacaoDTO` é um **Data Transfer Object (DTO)** utilizado para transportar as informações de **localização de um pet** entre as camadas da aplicação e também nas chamadas de API.
+# Request
 
-Campo	         Tipo	            Descrição	                                                          Exemplo
-sensorId ----	 String ----------	Identificador único do sensor ou dispositivo de rastreamento ---	"sensor-abc-123"
-latitude ----	 double ----------	Coordenada geográfica de latitude ------------------------------	-23.55052
-longitude ---  double ----------	Coordenada geográfica de longitude -----------------------------  -46.633308
-dataHora	---  LocalDateTime ---	Data e hora em que a localização foi capturada -----------------  "2025-09-30T16:00:00"
+Nesta requisição utilizamos os paremetros por meio do body, passando um objeto json, conforme o exemplo abaixo:
+
+{
+  "sensorId": "PET-002",
+  "latitude": -22.971964,
+  "longitude": -22.971964,,
+  "dataHora": "2025-07-21T11:30:00"
+}
+
+|Campo	   |     Tipo	       |          Descrição	                                           |          Exemplo     |
+|----------|-----------------|---------------------------------------------------------------|-----------------     |
+|sensorId  |	 String        |	Identificador único do sensor ou dispositivo de rastreamento | "sensor-abc-123"     |
+|latitude  | double          |	Coordenada geográfica de latitude                            |       -22.971964     |
+|longitude |  double         |	Coordenada geográfica de longitude                           |       -22.971964     |
+|dataHora	 |  LocalDateTime  |	Data e hora em que a localização foi capturada               | "2025-07-21T11:30:00"|
+
+# Response 
+
+[
+    {
+        "id": 1,
+        "sensorId": "PET-003",
+        "latitude": -30.034647,
+        "longitude": -51.217658,
+        "dataHora": "2025-07-21T13:45:00",
+        "pais": "Brazil",
+        "estado": "Rio Grande Do Sul",
+        "cidade": "Porto Alegre",
+        "bairro": "Farroupilha",
+        "endereco": "Largo Professor Francisco de Paula Brochado Rocha, Porto Alegre, RS, Brazil"
+    },
+    {
+        "id": 2,
+        "sensorId": "PET-002",
+        "latitude": -22.971964,
+        "longitude": -43.182553,
+        "dataHora": "2025-07-21T11:30:00",
+        "pais": "Brazil",
+        "estado": "Rio De Janeiro",
+        "cidade": "Rio de Janeiro",
+        "bairro": "Copacabana",
+        "endereco": "Avenida Atlantica 0, Rio de Janeiro, Brazil"
+    },
+    {
+        "id": 3,
+        "sensorId": "PET-001",
+        "latitude": -23.55052,
+        "longitude": -46.633308,
+        "dataHora": "2025-07-21T10:00:00",
+        "pais": "Brazil",
+        "estado": "Sao Paulo",
+        "cidade": "São Paulo",
+        "bairro": "Se",
+        "endereco": "Sé, São Paulo, Brazil"
+    }
+]
 
 ---
 
