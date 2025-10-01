@@ -190,7 +190,7 @@ O response devolve uma lista com os objetos cadastrados no endpoint de POST
 
 Na requisição GET por ID, é passado o valor de ID diretamente na URL, conforme o exemplo abaixo:
 
-*{{baseURL}}/api/localizacao/1*
+**{{baseURL}}/api/localizacao/1**
 
 ### Response 
 
@@ -217,7 +217,7 @@ O response devolve um Objeto com a requisição do Id que foi passado.
 
 Na requisição DELETE por ID, é passado o valor de ID diretamente na URL, conforme o exemplo abaixo:
 
-*{{baseURL}}/api/localizacao/1*
+**{{baseURL}}/api/localizacao/1**
 
 ### Response 
 
