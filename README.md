@@ -78,9 +78,9 @@ A aplicação estará disponível em: `http://localhost:8080/api/localizacao`
 
 | Método            Rota                        Descrição                          
 
-| POST   -->  /api/localizacao         -->     Registra nova localização  
+## | POST   -->  /api/localizacao         -->     Registra nova localização  
 
-# Request
+### Request
 
 Na requisição POST utilizamos os paremetros por meio do body, passando um objeto json,  conforme o exemplo abaixo:
 
@@ -102,7 +102,7 @@ Na requisição POST utilizamos os paremetros por meio do body, passando um obje
 
 # Response 
 
-O response devolve uma lista com os objetos cadastrados no endpoint de POST
+O response devolve o objeto cadastrado.
 
 ```json
     {
