@@ -88,12 +88,14 @@ A aplicação estará disponível em: `http://localhost:8080/api/localizacao`
 
 Nesta requisição utilizamos os paremetros por meio do body, passando um objeto json, conforme o exemplo abaixo:
 
+```json
 {
   "sensorId": "PET-002",
   "latitude": -22.971964,
   "longitude": -22.971964,,
   "dataHora": "2025-07-21T11:30:00"
 }
+```
 
 |Campo	   |     Tipo	       |          Descrição	                                           |          Exemplo     |
 |----------|-----------------|---------------------------------------------------------------|-----------------     |
@@ -104,6 +106,7 @@ Nesta requisição utilizamos os paremetros por meio do body, passando um objeto
 
 # Response 
 
+```json
 [
     {
         "id": 1,
@@ -142,6 +145,8 @@ Nesta requisição utilizamos os paremetros por meio do body, passando um objeto
         "endereco": "Sé, São Paulo, Brazil"
     }
 ]
+```
+
 
 ---
 
